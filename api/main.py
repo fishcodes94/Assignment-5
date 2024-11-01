@@ -2,9 +2,9 @@ from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 
-from .models import models, schemas
-from .controllers import orders, sandwiches, resources, recipes, order_details
-from .dependencies.database import engine, get_db
+from api.models import models, schemas
+from api.controllers import orders, sandwiches, resources, recipes, order_details
+from api.dependencies.database import engine, get_db
 
 models.Base.metadata.create_all(bind=engine)
 
